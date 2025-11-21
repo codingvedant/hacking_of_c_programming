@@ -77,14 +77,23 @@ Details the exploitation of a buffer overflow vulnerability using Return Oriente
 
 **Note:** Requires 32-bit compilation support (`gcc-multilib` package), Python 3 with pwntools, and ropper. ⚠️ **Security Warning:** This assignment demonstrates advanced ROP exploitation techniques. **MUST** be run in an isolated VM environment. Requires ASLR to be disabled for demonstration. See assignment README for setup instructions.
 
+### Homework 08: Global Offset Table (GOT) Hijacking Exploitation - Bypassing Non-Executable Stack Protection
+
+Demonstrates the exploitation of Global Offset Table (GOT) hijacking techniques to bypass Non-Executable (NX) stack protection. The exploit leverages the writable nature of GOT entries under partial RELRO to redirect legitimate function calls to malicious targets, achieving arbitrary code execution and spawning a shell. Includes analysis of PLT/GOT dynamic linking mechanisms, manual GOT overwrite exploitation, and demonstration of both legitimate and malicious update processes using GDB and memory manipulation techniques. Shows how function pointer redirection bypasses NX protection by leveraging the program's existing executable code segments.
+
+**Location:** `assignments/hw08_got_hijacking/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package) and GDB with pwndbg. ⚠️ **Security Warning:** This assignment demonstrates advanced GOT hijacking techniques. **MUST** be run in an isolated VM environment. Requires ASLR to be disabled and RELRO disabled (`-Wl,-z,norelro`) for demonstration. See assignment README for setup instructions.
+
 ## Requirements
 
 - GCC compiler
 - Make
-- GDB (for debugging)
+- GDB (for debugging, pwndbg recommended)
 - Python 2 (for hw06 exploit script)
 - Python 3 with pwntools and ropper (for hw07)
-- For hw02, hw03, hw04, hw05, hw06, and hw07: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
+- readelf and objdump (for hw08)
+- For hw02, hw03, hw04, hw05, hw06, hw07, and hw08: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
