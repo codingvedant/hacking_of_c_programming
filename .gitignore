@@ -1,0 +1,35 @@
+# Compiled binaries
+*.o
+*.exe
+*.out
+*.so
+*.a
+
+# Assignment-specific binaries
+assignments/*/hw*
+assignments/*/*.o
+assignments/*/*.exe
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+core
+vgcore.*
+
