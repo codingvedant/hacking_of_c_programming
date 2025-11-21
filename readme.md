@@ -53,12 +53,29 @@ Investigates how C programs organize variables of different storage classes in m
 
 **Note:** Requires 32-bit compilation support (`gcc-multilib` package). Includes automated GDB script for memory analysis.
 
+### Homework 05: Executing Shellcode via Return-Address Overwrite and Function-Pointer Call
+
+Explores low-level program control and stack memory manipulation by implementing two shellcode-based examples. Demonstrates two methods to transfer execution to shellcode: overwriting the return address (shell1) and using a function pointer (shell2). Both programs embed 32-bit assembly to invoke exit(2), providing a safe proof-of-concept. Uses GDB with pwndbg to observe runtime behavior, memory layout, and instruction execution.
+
+**Location:** `assignments/hw05_shellcode_execution/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package). ⚠️ **Security Warning:** This assignment demonstrates exploitation techniques for educational purposes only. Programs require executable stack (`-z execstack`) and disabled security mitigations.
+
+### Homework 06: Stack-Based Privilege Escalation via JMP %ESP Buffer Overflow Exploitation
+
+Explores stack-based buffer overflow exploitation and privilege escalation in Linux by implementing a SUID shell acquisition through the JMP %ESP technique. The program contains a deliberate buffer overflow vulnerability that is exploited to execute injected shellcode with elevated privileges. Uses GDB with pwndbg to analyze memory layout, identify the JMP %ESP gadget, and verify successful code execution. Demonstrates how stack memory corruption, return address overwriting, and shellcode injection interact to achieve privilege escalation.
+
+**Location:** `assignments/hw06_suid_privilege_escalation/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package). ⚠️ **CRITICAL WARNING:** This assignment demonstrates privilege escalation techniques. **MUST** be run in an isolated VM environment. Requires SUID root privileges for demonstration. See assignment README for setup instructions.
+
 ## Requirements
 
 - GCC compiler
 - Make
 - GDB (for debugging)
-- For hw02, hw03, and hw04: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
+- Python 2 (for hw06 exploit script)
+- For hw02, hw03, hw04, hw05, and hw06: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
