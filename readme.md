@@ -37,12 +37,28 @@ Investigates how modern C compilers optimize multiplication by constant operands
 
 **Note:** Requires 32-bit compilation support (`gcc-multilib` package).
 
+### Homework 03: Memory Layout and Debugging through Variable Declarations
+
+Explores memory segmentation in C programs by analyzing the storage of variables from different storage classes. The program prints memory addresses of local, global, static, and dynamically allocated variables to demonstrate their placement in distinct memory segments: the stack, data, BSS, and heap. Uses GDB with pwndbg to correlate observations with assembly code.
+
+**Location:** `assignments/hw03_memory_layout/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package).
+
+### Homework 04: Memory Layout and Automated Debugging with Variable Declarations
+
+Investigates how C programs organize variables of different storage classes in memory using automated GDB scripts. Extends hw03 with automated debugging workflow using a GDB script to standardize memory inspection, collect variable addresses, inspect memory layouts, and view assembly code. Emphasizes reproducible debugging practices and automated analysis.
+
+**Location:** `assignments/hw04_automated_debugging/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package). Includes automated GDB script for memory analysis.
+
 ## Requirements
 
 - GCC compiler
 - Make
 - GDB (for debugging)
-- For hw02: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
+- For hw02, hw03, and hw04: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
