@@ -69,13 +69,22 @@ Explores stack-based buffer overflow exploitation and privilege escalation in Li
 
 **Note:** Requires 32-bit compilation support (`gcc-multilib` package). ⚠️ **CRITICAL WARNING:** This assignment demonstrates privilege escalation techniques. **MUST** be run in an isolated VM environment. Requires SUID root privileges for demonstration. See assignment README for setup instructions.
 
+### Homework 07: Return Oriented Programming (ROP) Exploitation - Bypassing Non-Executable Stack Protection
+
+Details the exploitation of a buffer overflow vulnerability using Return Oriented Programming (ROP) techniques to bypass Non-Executable (NX) stack protection. Demonstrates how to chain together existing code segments (gadgets) within a vulnerable binary to achieve arbitrary code execution and spawn a shell, despite the presence of modern security mitigations. Uses GDB, pwntools, and ropper for gadget discovery, payload construction, and practical exploitation. Shows how code reuse attacks bypass NX protection by leveraging the program's own executable code segments.
+
+**Location:** `assignments/hw07_rop_exploitation/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package), Python 3 with pwntools, and ropper. ⚠️ **Security Warning:** This assignment demonstrates advanced ROP exploitation techniques. **MUST** be run in an isolated VM environment. Requires ASLR to be disabled for demonstration. See assignment README for setup instructions.
+
 ## Requirements
 
 - GCC compiler
 - Make
 - GDB (for debugging)
 - Python 2 (for hw06 exploit script)
-- For hw02, hw03, hw04, hw05, and hw06: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
+- Python 3 with pwntools and ropper (for hw07)
+- For hw02, hw03, hw04, hw05, hw06, and hw07: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
