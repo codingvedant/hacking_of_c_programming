@@ -29,11 +29,20 @@ Investigates how the C compiler handles memory alignment and padding for differe
 
 **Location:** `assignments/hw01_memory_alignment/`
 
+### Homework 02: Compiler Optimizations and Debugging through Multiplication Functions
+
+Investigates how modern C compilers optimize multiplication by constant operands through strength reduction technique. Examines how compilers generate equivalent sequences of adds, subtracts, and shifts instead of general-purpose multiply instructions. Three programs multiply integers by 3, 7, and 12, with assembly analysis using GDB.
+
+**Location:** `assignments/hw02_compiler_optimizations/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package).
+
 ## Requirements
 
 - GCC compiler
 - Make
 - GDB (for debugging)
+- For hw02: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
