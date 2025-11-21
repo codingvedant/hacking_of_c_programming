@@ -85,6 +85,14 @@ Demonstrates the exploitation of Global Offset Table (GOT) hijacking techniques 
 
 **Note:** Requires 32-bit compilation support (`gcc-multilib` package) and GDB with pwndbg. ⚠️ **Security Warning:** This assignment demonstrates advanced GOT hijacking techniques. **MUST** be run in an isolated VM environment. Requires ASLR to be disabled and RELRO disabled (`-Wl,-z,norelro`) for demonstration. See assignment README for setup instructions.
 
+### Homework 09: Format String Vulnerability Exploitation - Privilege Escalation via Return Address Overwrite
+
+Demonstrates the exploitation of a format string vulnerability to achieve arbitrary code execution and privilege escalation in a SUID binary. The exploit leverages uncontrolled format string specifiers in the printf() function to overwrite the return address on the stack, redirecting program flow to a malicious target function that spawns a root shell. Includes stack layout analysis using GDB, precise calculation of memory addresses, format string payload construction, and successful demonstration of control flow hijacking. Shows how the %n format specifier enables arbitrary memory writes to bypass standard compiler protections.
+
+**Location:** `assignments/hw09_format_string_exploitation/`
+
+**Note:** Requires 32-bit compilation support (`gcc-multilib` package). ⚠️ **CRITICAL WARNING:** This assignment demonstrates privilege escalation techniques via format string exploitation. **MUST** be run in an isolated VM environment. Requires SUID root privileges and ASLR disabled for demonstration. See assignment README for setup instructions.
+
 ## Requirements
 
 - GCC compiler
@@ -92,8 +100,9 @@ Demonstrates the exploitation of Global Offset Table (GOT) hijacking techniques 
 - GDB (for debugging, pwndbg recommended)
 - Python 2 (for hw06 exploit script)
 - Python 3 with pwntools and ropper (for hw07)
+- Python 3 (for hw09 exploit script)
 - readelf and objdump (for hw08)
-- For hw02, hw03, hw04, hw05, hw06, hw07, and hw08: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
+- For hw02, hw03, hw04, hw05, hw06, hw07, hw08, and hw09: 32-bit compilation support (install `gcc-multilib` on Debian/Ubuntu or `glibc-devel.i686 gcc-c++-i686` on Fedora)
 
 ## License
 
